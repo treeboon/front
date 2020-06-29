@@ -1,0 +1,118 @@
+@import "global-variables";
+/* Regal */
+.regal
+{
+	@include base;
+}
+.regal-block
+{
+	@include base;
+	position: relative;
+}
+.regal-lightslider-block
+{
+	@include base;
+	padding: 0 30px;
+	position: relative;
+}
+.lightslider-h3
+{
+	@include base;
+	font-size: 16px;
+	font-weight: bold;
+	margin: 30px 0 20px;
+	padding: 0 15px;
+	text-align: center;
+	& > span
+	{
+		color: $color-base;
+		font-size: 30px;
+		position: relative;
+		top: 8px;
+	}
+}
+.regal-lightslider
+{
+	@include base;
+	& a
+	{
+		@include base;
+		img
+		{
+			display: block;
+			margin: auto;
+		}
+		& span
+		{
+			display: block;
+			margin: auto;
+			text-align: center;
+			color: lighten($color-text, 12.5%);
+			margin-top: 10px;
+		}
+	}
+}
+.regal-navigation
+{
+	@include base;
+	& button
+	{
+		position: absolute;
+		top: 100px;
+		width: 30px;
+		height: 100px;
+		border: none;
+		border-radius: $radius-button;
+		padding: 0 10px;
+		color: $color-text-gray;
+		&#next-regal
+		{
+			left: 0;
+			background-image: linear-gradient(to right, $color-background-active, $color-background 75%);
+			text-align: left;
+			&:hover
+			{
+				background-image: linear-gradient(to right, rgba($color-background-active, .1), $color-background 75%);
+			}
+			&:active
+			{
+				background-image: linear-gradient(to right, $color-background-active, $color-background 75%);
+			}
+		}
+		&#prev-regal
+		{
+			right: 0;
+			background-image: linear-gradient(to left, $color-background-active, $color-background 75%);
+			text-align: right;
+			&:hover
+			{
+				background-image: linear-gradient(to left, rgba($color-background-active, .1), $color-background 75%);
+			}
+			&:active
+			{
+				background-image: linear-gradient(to left, $color-background-active, $color-background 75%);
+			}
+		}
+	}
+}
+@media(min-width: 768px)
+{
+	.lightslider-h3
+	{
+		font-size: $font-size-blog-h3;
+	}
+}
+@media(min-width: 1200px)
+{
+	.regal-lightslider-block
+	{
+		padding: 0 150px;
+	}
+	.regal-navigation button
+	{
+		width: 100px;
+		border-radius: 30px;
+		font-size: $font-size-icon;
+		padding: 0 30px;
+	}
+}

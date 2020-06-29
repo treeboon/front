@@ -1,0 +1,217 @@
+@import "global-variables";
+/* Header */
+.header-offset
+{
+	@include base;
+	height: 78px;
+}
+header.header
+{
+	@include base;
+	box-shadow: $shadow-menu;
+	position: fixed;
+	background-color: $color-background;
+	top: 0;
+	z-index: 999;
+	transition: $transition;
+}
+.treeboon-nav
+{
+	float: right;
+	& ul
+	{
+		float: right;
+		& li
+		{
+			float: right;
+			&:not(:last-child) a::before
+			{
+				content: '';
+				position: absolute;
+				top: 23px;
+				left: 0;
+				width: 1px;
+				height: 30px;
+				background-color: $color-border;
+			}
+			& a
+			{
+				float: right;
+				color: $color-text;
+				padding: 0 20px;
+				line-height: 78px;
+				position: relative;
+				&.active
+				{
+					background-color: $color-background-active;
+					padding: 0 28px;
+					&::before
+					{
+						display: none;
+					}
+				}
+				&.bold
+				{
+					font-weight: bold;
+				}
+				& > span
+				{
+					font-size: $font-size-icon;
+					margin-left: 5px;
+					position: relative;
+					top: 5px;
+					color: $color-text-gray;
+				}
+				&:hover
+				{
+					color: $color-base;
+				}
+				&:active
+				{
+					background-color: $color-background-active;
+				}
+			}
+		}
+	}
+}
+.logo
+{
+	float: left;
+	width: 125px;
+	height: 40px;
+	background: url("../images/logo.jpg") no-repeat;
+	margin: 15px auto 23px;
+}
+.header-ul
+{
+	float: left;
+	margin: 18px 0 0 20px;
+	border-left: 1px solid $color-border;
+	padding-left: 20px;
+}
+.login-register
+{
+	float: left;
+	border: 2px solid $color-base;
+	border-radius: $radius-button;
+	padding: 0 25px;
+	height: 40px;
+	line-height: 36px;
+	color: $color-text;
+	&:hover
+	{
+		background-color: $color-base;
+		color: $color-invert;
+	}
+}
+.header-pattern
+{
+	@include base;
+	height: 10px;
+	background-image: url("../images/pattern.png");
+}
+@media(max-width: 425px)
+{
+	.header-offset
+	{
+		height: 70px;
+	}
+	.logo
+	{
+		float: none;
+		display: block;
+		width: 95px;
+    	background-size: contain;
+		margin-bottom: 15px;
+	}
+	.header-ul
+	{
+		margin: -50px 0 0 0;
+		padding-left: 0;
+		border-left: none;
+		font-size: $font-size-sub;
+	}
+	.login-register
+	{
+		padding: 0 7px;
+		height: 30px;
+		line-height: 26px;
+	}
+}
+@media(max-width: 425px)
+{
+	.menu-bar
+	{
+		margin-top: 6px !important;
+	}
+}
+@media(max-width: 991px)
+{
+	.menu-bar
+	{
+		float: right;
+		width: 25px;
+		margin-top: 25px;
+		& span
+		{
+			@include base;
+			height: 3px;
+			background-color: $color-text;
+			margin-top: 5px;
+			border-radius: 1.5px;
+		}
+	}
+	.treeboon-nav
+	{
+		position: fixed;
+		top: 0;
+		right: -250px;
+		width: 250px;
+		height: 100%;
+		background-color: $color-background;
+		z-index: 99999;
+		visibility: hidden;
+		transition: $transition-slow;
+		box-shadow: $shadow-menu;
+		&.active
+		{
+			right: 0;
+			visibility: visible;
+		}
+		& li
+		{
+			width: 100%;
+			& a
+			{
+				width: 100%;
+				padding: 0 30px !important;
+				&::before
+				{
+					width: 100% !important;
+					height: 1px !important;
+					bottom: 0 !important;
+					top: auto !important;
+					
+				}
+			}
+		}
+	}
+	.overlay
+	{
+		position: fixed;
+		z-index: 999;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		right: 0;
+		background-color: $color-background-overlay;
+		display: none;
+	}
+}
+@media(min-width: 992px)
+{
+	.menu-bar
+	{
+		display: none;
+	}
+}

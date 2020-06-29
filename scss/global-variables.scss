@@ -1,0 +1,44 @@
+$color-text: #000;
+$color-text-gray: #888;
+$color-invert: #fff;
+$color-base: #a0d001;
+$color-second: #49ef8f;
+$color-third: #01786e;
+$color-fourth: #35ff8b;
+$color-background: #fff;
+$color-section: #686868;
+$color-component-title: #555;
+$color-background-active: rgba(0,0,0,.04);
+$color-background-overlay: rgba(0,0,0,.1);
+$color-border: #e7e7e7;
+$color-footer: #eceff1;
+$color-footer-title: #6a7378;
+
+$shadow-menu: 0 10px 70px rgba(23,24,32,.1);
+$shadow-search: 0 10px 50px rgba(23,24,32,.2);
+$shadow-menu: 0 0 50px rgba(23,24,32,.2);
+$shadow-treeboon: 0 20px 30px rgba(23,24,32,.1);
+$shadow-single-contact: 0 10px 20px rgba(23,24,32,.1);
+
+$font-size-section-big: 24px;
+$font-size-search-h3: 20px;
+$font-size-blog-h3: 18px;
+$font-size-section: 16px;
+$font-size-normal: 14px;
+$font-size-small: 13px;
+$font-size-sub: 12px;
+$font-size-icon: 20px;
+
+$radius-circle: 50%;
+$radius-button: 10px;
+$radius-input: 5px;
+
+$transition: .2s ease-in-out;
+$transition-slow: .4s ease-in-out;
+
+/* Mixins */
+@mixin base
+{
+	float: right;
+	width: 100%;
+}

@@ -1,0 +1,196 @@
+@import "global-variables";
+/* Treeboon */
+.index-treeboon-parent
+{
+	@include base;
+	position: relative;
+	&::before
+	{
+		content: '';
+		position: absolute;
+		left: 0;
+		bottom: 15px;
+		width: 100%;
+		height: 72px;
+		background: $color-third;
+	}
+}
+.index-treeboon-block
+{
+	float: right;
+	width: calc(100% + 30px);
+	margin-right: -15px;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	margin-top: 40px;
+	& > div
+	{
+		@include base;
+		margin-bottom: 30px;
+		position: relative;
+	}
+}
+.treeboon-block
+{
+	@include base;
+	overflow: hidden;
+	background-color: $color-background;
+	box-shadow: $shadow-treeboon;
+}
+.treeboon-title
+{
+	@include base;
+	background-color: $color-background-active;
+	line-height: 58px;
+	border-bottom: 1px solid $color-border;
+	padding: 0 15px;
+	font-size: $font-size-section;
+	color: $color-section;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+.treeboon-component-block
+{
+	@include base;
+	&.active .badge
+	{
+		background-image: linear-gradient(to left, $color-base ,lighten($color-base , 25%));
+		color: darken($color-base, 20%);
+	}
+}
+.treeboon-component
+{
+	@include base;
+	border-bottom: 1px solid $color-border;
+	padding: 20px 15px 40px;
+	&:hover
+	{
+		background-color: rgba($color-background-active, .02);
+	}
+	&:active
+	{
+		background-color: $color-background;
+	}
+	& h2
+	{
+		float: right;
+		font-size: $font-size-normal;
+		color: $color-component-title;
+		font-weight: normal;
+	}
+	& .badge
+	{
+		float: left;
+		line-height: 20px;
+		padding: 0 10px;
+		border-radius: $radius-button;
+		background-color: rgba( $color-background-active, .1 );
+		font-size: $font-size-sub;
+		color: $color-text-gray;
+		margin-top: 3px;
+	}
+}
+.treeboon-name
+{
+	clear: both;
+	color: lighten($color-text-gray , 20%);
+	& span
+	{
+		margin-left: 5px;
+	}
+}
+.show-all-newest-treeboon
+{
+	@include base;
+	line-height: 56px;
+	text-align: center;
+	font-size: $font-size-section;
+	color: lighten($color-text, 12.5%);
+	&:hover
+	{
+		font-weight: bold;
+		color: $color-base;
+	}
+	&:active
+	{
+		background-color: $color-background-active;
+	}
+}
+@media(min-width: 568px)
+{
+	.index-treeboon-block
+	{
+		width: 100%;
+		margin-right: 0;
+	}
+}
+@media(min-width: 768px)
+{
+	.index-treeboon-block
+	{
+		& > div
+		{
+			&.active-treeboon,&.newst-treeboon
+			{
+				width: calc(50% - 15px);
+				display: flex;
+			}
+		}
+	}
+	.treeboon-block
+	{
+		border-radius: $radius-button;
+		position: sticky;
+		bottom: 15px;
+    	align-self: flex-end;
+	}
+	.treeboon-title
+	{
+		padding: 0 25px;
+	}
+	.treeboon-component
+	{
+		padding: 20px 25px 40px;
+	}
+}
+@media(min-width: 992px)
+{
+	.index-treeboon-block > div
+	{
+		&.active-treeboon
+		{
+			width: calc(66.6666% - 15px);
+		}
+		&.newst-treeboon
+		{
+			width: calc(33.3333% - 15px);
+		}
+	}
+	.treeboon-component-block.active
+	{
+		padding: 0 15px;
+		display: flex;
+		justify-content: space-between;
+		flex-flow: row wrap;
+		margin-bottom: 60px;
+		& > a
+		{
+			width: calc(50% - 8px);
+		}
+		& .treeboon-component
+		{
+			border: 1px solid darken($color-border, 10%);
+			border-radius: $radius-button;
+			margin-bottom: 10px;
+			padding: 14px 25px 34px;
+		}
+	}
+}
+@media(min-width: 992px) and (max-width: 1199px)
+{
+	.treeboon-component-block.active .treeboon-component
+	{
+		padding: 14px 15px 34px;
+	}
+}

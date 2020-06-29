@@ -1,0 +1,88 @@
+/* Mixins */
+/* Regal */
+.regal {
+  float: right;
+  width: 100%; }
+
+.regal-block {
+  float: right;
+  width: 100%;
+  position: relative; }
+
+.regal-lightslider-block {
+  float: right;
+  width: 100%;
+  padding: 0 30px;
+  position: relative; }
+
+.lightslider-h3 {
+  float: right;
+  width: 100%;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 30px 0 20px;
+  padding: 0 15px;
+  text-align: center; }
+  .lightslider-h3 > span {
+    color: #a0d001;
+    font-size: 30px;
+    position: relative;
+    top: 8px; }
+
+.regal-lightslider {
+  float: right;
+  width: 100%; }
+  .regal-lightslider a {
+    float: right;
+    width: 100%; }
+    .regal-lightslider a img {
+      display: block;
+      margin: auto; }
+    .regal-lightslider a span {
+      display: block;
+      margin: auto;
+      text-align: center;
+      color: #202020;
+      margin-top: 10px; }
+
+.regal-navigation {
+  float: right;
+  width: 100%; }
+  .regal-navigation button {
+    position: absolute;
+    top: 100px;
+    width: 30px;
+    height: 100px;
+    border: none;
+    border-radius: 10px;
+    padding: 0 10px;
+    color: #888; }
+    .regal-navigation button#next-regal {
+      left: 0;
+      background-image: linear-gradient(to right, rgba(0, 0, 0, 0.04), #fff 75%);
+      text-align: left; }
+      .regal-navigation button#next-regal:hover {
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.1), #fff 75%); }
+      .regal-navigation button#next-regal:active {
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.04), #fff 75%); }
+    .regal-navigation button#prev-regal {
+      right: 0;
+      background-image: linear-gradient(to left, rgba(0, 0, 0, 0.04), #fff 75%);
+      text-align: right; }
+      .regal-navigation button#prev-regal:hover {
+        background-image: linear-gradient(to left, rgba(0, 0, 0, 0.1), #fff 75%); }
+      .regal-navigation button#prev-regal:active {
+        background-image: linear-gradient(to left, rgba(0, 0, 0, 0.04), #fff 75%); }
+
+@media (min-width: 768px) {
+  .lightslider-h3 {
+    font-size: 18px; } }
+@media (min-width: 1200px) {
+  .regal-lightslider-block {
+    padding: 0 150px; }
+
+  .regal-navigation button {
+    width: 100px;
+    border-radius: 30px;
+    font-size: 20px;
+    padding: 0 30px; } }

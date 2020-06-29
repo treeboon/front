@@ -1,0 +1,180 @@
+@import "global-variables";
+/* Search Block */
+.search-block
+{
+	@include base;
+	background: url("../images/back.jpg") center center;
+	padding: 75px 0 100px;
+}
+.search-block-h3
+{
+	@include base;
+	text-align: center;
+	font-size: 14px;
+	line-height: 26px;
+	& span
+	{
+		background-color: $color-base;
+		color: $color-invert;
+		padding: 0 7px;
+		border-radius: 13px;
+		height: 26px;
+		line-height: 22px;
+	}
+}
+.form-block
+{
+	@include base;
+}
+.form-search
+{
+	@include base;
+	background-color: $color-background;
+	border-radius: $radius-button;
+	padding: 10px 8px 0;
+	display: flex;
+	justify-content: space-between;
+	flex-flow: row wrap;
+	margin-top: 30px;
+	box-shadow: $shadow-search;
+	& > div
+	{
+		width: 100%;
+		padding: 0 2px;
+		margin-bottom: 10px;
+	}
+	&  select
+	{
+		@include base;
+		height: 40px;
+		padding: 0 10px;
+		border: 1px solid $color-border;
+		border-radius: $radius-input;
+	}
+	& input
+	{
+		@include base;
+		height: 40px;
+		padding: 0 10px;
+		border: 1px solid $color-border;
+		border-radius: $radius-input;
+	}
+}
+.form-button
+{
+	@include base;
+	height: 40px;
+	border-radius: $radius-input;
+	border: none;
+	color: darken($color-base, 30%);
+	font-size: $font-size-section;
+	background-image: linear-gradient(to left, $color-base 50%,lighten($color-base , 25%) 100%);
+	background-size: 200% 100%;
+	transition: $transition;
+	&:hover
+	{
+		background-position: 100% 100%;
+	}
+	&:active
+	{
+		background: lighten($color-base , 25%);
+	}
+}
+.show-all-treeboon
+{
+	@include base;
+	line-height: 70px;
+	position: relative;
+	text-align: center;
+	font-size: $font-size-section;
+	background-image: linear-gradient(to right, $color-third 0% , $color-second 50%);
+	background-size: 200% 100%;
+	transition: $transition;
+	font-weight: bold;
+	color: $color-invert;
+	&::before,&::after
+	{
+		content: '';
+		position: absolute;
+		top: 3px;
+		left: 0;
+		width: 100%;
+		height: 1px;
+		background-image: linear-gradient(to right, rgba(0,0,0,.3) 70%, transparent 70%);
+		background-size: 6px 1px;
+	}
+	&::after
+	{
+		top: auto;
+		bottom: 3px;
+	}
+	&:hover
+	{
+		background-position: 100% 0;
+	}
+	&:active
+	{
+		background: $color-third
+	}
+}
+@media(min-width: 768px)
+{
+	.search-block
+	{
+		padding: 115px 0 140px;
+	}
+	.search-block-h3
+	{
+		font-size: $font-size-search-h3;
+	}
+	.form-search
+	{
+		flex-flow: nowrap;
+		& > div:last-child
+		{
+			width: 80%;
+		}
+	}
+	.form-block.single-search
+	{
+		& .form-search > div:last-child
+		{
+			width: 70%;
+		}
+	}
+}
+@media(min-width: 1200px)
+{
+	.form-block
+	{
+		padding: 0 100px;
+		&.single-search
+		{
+			padding: 0 100px;
+		}
+	}
+}
+.treeboon-category-select ~ .select2 .select2-selection__rendered
+{
+	padding-right: 40px !important;
+	&::before
+	{
+		content: '\e962';
+		position: absolute;
+		right: 20px;
+		font-family: LineIcons !important;
+		font-size: $font-size-icon;
+	}
+}
+.treeboon-type-select ~ .select2 .select2-selection__rendered
+{
+	padding-right: 40px !important;
+	&::before
+	{
+		content: '\e91f';
+		position: absolute;
+		right: 20px;
+		font-family: LineIcons !important;
+		font-size: $font-size-icon;
+	}
+}

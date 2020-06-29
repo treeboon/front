@@ -1,0 +1,223 @@
+@import "global-variables";
+/* Page */
+.single-page
+{
+	@include base;
+	border-radius: $radius-button;
+	background-color: $color-background;
+	box-shadow: $shadow-treeboon;
+	padding: 10px;
+	margin-bottom: 30px;
+}
+.page-title
+{
+	@include base;
+	font-size: $font-size-search-h3;
+	font-weight: bold;
+	margin: 0 0 15px;
+	&::before
+	{
+		content: '';
+		display: inline-block;
+		width: 10px;
+		height: 10px;
+		background-color: $color-base;
+		margin-left: 5px;
+	}
+}
+.page-description
+{
+	@include base;
+	text-align: justify;
+	margin-bottom: 30px;
+}
+@media(min-width: 768px)
+{
+	.single-page
+	{
+		padding: 25px;
+	}
+}
+/* FAQ */
+.faq
+{
+	@include base;
+	border: 1px dashed darken($color-border, 10%);
+	border-radius: $radius-button;
+	margin-bottom: 15px;
+	text-align: justify;
+}
+.faq-title
+{
+	@include base;
+	font-size: $font-size-section;
+	line-height: 60px;
+	padding: 0 50px 0 15px;
+	cursor: pointer;
+	position: relative;
+	&::before
+	{
+		content: '';
+		position: absolute;
+		top: 30px;
+		right: 20px;
+		width: 20px;
+		height: 2px;
+		background-color: $color-base;
+	}
+	&::after
+	{
+		content: '';
+		position: absolute;
+		top: 30px;
+		right: 20px;
+		width: 20px;
+		height: 2px;
+		background-color: $color-base;
+		transform: rotate(90deg);
+		transition: $transition;
+	}
+	&.active::after
+	{
+		transform: rotate(0);
+	}
+}
+.faq-answer
+{
+	@include base;
+	font-size: $font-size-small;
+	color: $color-text-gray;
+	padding: 0 50px 20px 15px;
+	display: none;
+}
+/* Rules */
+.rules-h2
+{
+	@include base;
+	font-size: $font-size-blog-h3;
+	font-weight: bold;
+	margin: 20px 0 10px;
+}
+.rule-ul
+{
+	@include base;
+	& li
+	{
+		@include base;
+		margin-bottom: 5px;
+		& span
+		{
+			display: inline-block;
+			width: 25px;
+			height: 25px;
+			background-color: $color-base;
+			color: $color-invert;
+			text-align: center;
+			line-height: 25px;
+			margin-left: 5px;
+			border-radius: $radius-input;
+		}
+	}
+}
+/* Contact Us */
+.comment-form
+{
+	float: right;
+	width: 100%;
+	margin: 30px 0;
+}
+.input-div
+{
+	float: right;
+	width: 100%;
+	height: 50px;
+	border-radius: $radius-button;
+	border: 1px solid darken($color-border,10%);
+	margin-bottom: 30px;
+	position: relative;
+	& span
+	{
+		position: absolute;
+		background: $color-background;
+		padding: 0 12px;
+		font-size: $font-size-sub;
+		color: $color-text-gray;
+		top: -10px;
+		right: 40px;
+		&::before
+		{
+			content: '';
+			position: absolute;
+			top: calc(50% - 4px);
+			right: 0;
+			width: 5px;
+			height: 5px;
+			border-radius: $radius-circle;
+			background: darken($color-border,10%);
+		}
+		&::after
+		{
+			content: '';
+			position: absolute;
+			top: calc(50% - 4px);
+			left: 0;
+			width: 5px;
+			height: 5px;
+			border-radius: $radius-circle;
+			background: darken($color-border,10%);
+		}
+	}
+	& input
+	{
+		float: right;
+		width: 100%;
+		padding-right: 52px;
+		height: 100%;
+		border-radius: $radius-button;
+		border: none;
+	}
+	&.textarea
+	{
+		height: auto;
+		& textarea
+		{
+			float: right;
+			width: 100%;
+			min-width: 100%;
+			max-width: 100%;
+			min-height: 100px;
+			height: 100px;
+			padding: 10px 52px 0 0;
+			border-radius: $radius-button;
+			border: none;
+		}
+	}
+}
+.submit-button
+{
+	float: right;
+	width: 100%;
+	height: 50px;
+	border-radius: $radius-button;
+	border: none;
+	color: darken($color-base, 30%);
+	background-image: linear-gradient(to left, $color-base 50%,lighten($color-base , 25%) 100%);
+	background-size: 200% 100%;
+	font-size: $font-size-section;
+	transition: $transition;
+	&:hover
+	{
+		background-position: 100% 100%;
+	}
+	&:active
+	{
+		background: lighten($color-base , 25%);
+	}
+}
+@media(min-width: 1200px)
+{
+	.comment-form
+	{
+		padding: 0 200px;
+	}
+}

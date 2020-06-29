@@ -1,0 +1,208 @@
+@import "global-variables";
+/* Search Result */
+.search-result-block
+{
+	@include base;
+	position: sticky;
+	top: 90px;
+	margin-top: -61px;
+}
+.search-result
+{
+	@include base;
+	border-radius: $radius-button;
+	background-color: $color-background;
+	box-shadow: $shadow-treeboon;
+	overflow: hidden;
+}
+.search-result-title
+{
+	@include base;
+	border-bottom: 1px solid $color-border;
+	padding: 20px 20px 0;
+}
+.search-result-text
+{
+	float: right;
+	font-size: $font-size-section;
+	font-weight: bold;
+	color: lighten($color-text, 13.2%);
+	line-height: 20px;
+	margin: 5px 0 20px;
+	& > span
+	{
+		padding: 0 7px;
+		border-radius: $radius-button;
+		background-color: $color-base;
+		color: $color-invert;
+	}
+}
+.related-select
+{
+	float: left;
+	& > span.title
+	{
+		display: inline-block;
+		position: relative;
+		top: -6px;
+		font-size: $font-size-small;
+		color: $color-component-title;
+	}
+	& > .select2
+	{
+		width: 120px !important;
+		display: inline-block;
+		margin-bottom: 6px;
+	}
+	& .select2-selection
+	{
+		height: 30px !important;
+	}
+	& .select2-selection__rendered,& .select2-selection__arrow
+	{
+		height: 30px !important;
+		line-height: 30px !important;
+	}
+	& .select2-container--default .select2-selection--single
+	{
+		background-color: $color-background-active;
+	}
+}
+.result-ads
+{
+	@include base;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-gap: 1px;
+	background-color: $color-border;
+}
+.treeboon-result
+{
+	@include base;
+	background-color: $color-background;
+	padding: 15px 20px;
+	&:hover
+	{
+		background-color: lighten($color-border,7%);
+	}
+	&:active
+	{
+		background-color: $color-background;
+	}
+	& > h2
+	{
+		float: right;
+		width: calc(100% - 60px);
+		font-size: $font-size-normal;
+		color: $color-component-title;
+		font-weight: normal;
+		line-height: 25px;
+	}
+	& > ul
+	{
+		@include base;
+		font-size: $font-size-sub;
+		color: lighten($color-component-title, 30%);
+		margin: 5px 0 30px;
+		& li
+		{
+			@include base;
+			&.square::before
+			{
+				content: '';
+				display: inline-block;
+				width: 6px;
+				height: 6px;
+				background-color: $color-base;
+				margin-left: 10px;
+			}
+			&.price
+			{
+				color: $color-component-title;
+			}
+		}
+	}
+	&.active
+	{
+		& > h2
+		{
+			font-weight: bold;
+			color: lighten($color-text, 13.2%);
+		}
+		& > .badge
+		{
+			float: left;
+			line-height: 20px;
+			padding: 0 10px;
+			border-radius: 10px;
+			font-size: 12px;
+			margin-top: 3px;
+			background-image: linear-gradient(to left, $color-base ,lighten($color-base , 25%));
+			color: darken($color-base, 20%);
+		}
+	}
+}
+.niwanta-pagination
+{
+	@include base;
+	text-align: center;
+	margin-top: 36px;
+	color: $font-size-section;
+	& li
+	{
+		display: inline-block;
+		margin-bottom: 5px;
+		& a
+		{
+			float: right;
+			width: 20px;
+			height: 34px;
+			line-height: 36px;
+			border-radius: $radius-button;
+			background-color: $color-background;
+			color: lighten($color-text, 13.2%);
+			box-shadow: $shadow-treeboon;
+			&:hover,&.active
+			{
+				background-image: linear-gradient(to left, $color-base ,lighten($color-base , 25%));
+				color: darken($color-base, 20%);
+			}
+		}
+	}
+}
+.remove-href:hover
+{
+	background: $color-background !important;
+}
+@media(min-width: 768px)
+{
+	.niwanta-pagination li a
+	{
+		min-width: 34px;
+		& > span
+		{
+			width: 50px;
+		}
+		&.arrow
+		{
+			width: 68px;
+		}
+	}
+}
+@media(min-width: 992px)
+{
+	.result-ads
+	{
+		grid-template-columns: 1fr 1fr;
+	}
+}
+.labels-block
+{
+	@include base;
+	height: 115px;
+	overflow: hidden;
+	&.active
+	{
+		height: auto;
+	}
+}
